@@ -1,0 +1,43 @@
+{
+  "name": "void",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./bin/startup.sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer-loader": "^2.0.0",
+    "babel": "^5.4.7",
+    "babel-core": "^5.4.2",
+    "babel-loader": "^5.1.0",
+    "babel-runtime": "^5.8.20",
+    "css-loader": "^0.12.1",
+    "file-loader": "^0.8.4",
+    "json-loader": "^0.5.3",
+    "koa": "^1.1.0",
+    "koa-rewrite": "^1.1.1",
+    "koa-static-cache": "^3.1.2",
+    "node-libs-browser": "^0.5.0",
+    "redux-devtools": "^2.1.5",
+    "style-loader": "^0.12.2",
+    "stylus-loader": "^1.1.1",
+    "webpack": "^1.9.6"
+  },
+  "dependencies": {
+    "color": "^0.10",
+    "moment": "^2.10.6",
+    "radium": "^0.14.3",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "react-modal": "^0.6.1",
+    "react-redux": "^4.0.0",
+    "react-soundcloud-widget": "doodzik/react-soundcloud-widget#347b98816834a2c7911beacb52eadce8d9de49b7",
+    "react-tagsinput": "^2.0.0",
+    "redux": "^3.0.4",
+    "soundcloud": "^3.0.1"
+  }
+}
