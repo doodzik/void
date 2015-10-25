@@ -1,6 +1,8 @@
 import React,  { Component } from "react"
-var Modal = require('react-modal')
-var Radium = require('radium')
+import Modal from 'react-modal'
+import Radium from 'radium'
+
+require('./modal.css')
 
 @Radium
 export default class Nav extends Component {
