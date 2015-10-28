@@ -19,9 +19,9 @@ export default class Tags extends Component {
     // const created_at_to = moment().subtract(2, 'day').format('YYYY-MM-DD hh:mm:ss')
     const created_at_from = moment().subtract(1, 'day').format('YYYY-MM-DD hh:mm:ss')
 
-    SC.get('/tracks', { tags, limit, "created_at[from]": created_at_from }).then(tracks => {
-      console.log(tracks)
-    })
+    // SC.get('/tracks', { tags, limit, "created_at[from]": created_at_from }).then(tracks => {
+      // console.log(tracks)
+    // })
   }
 
   render() {
