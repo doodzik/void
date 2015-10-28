@@ -1,8 +1,10 @@
 import React,  { Component } from "react"
+import ReactDOM from 'react-dom'
 import { connect, Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, combineReducers } from 'redux'
 import Radium from 'radium'
 import SC from 'soundcloud'
+import Immutable from 'immutable'
 
 SC.initialize({
   client_id: 'f7790d392de1d10fe1e353c87f9a50ce'
@@ -12,26 +14,36 @@ import Nav from './src/nav.jsx'
 import Tags from './src/tags.jsx'
 import Player from './src/player.jsx'
 import Header from './src/header.jsx'
+import Modals from './src/modal.jsx'
 
-function playlist(state = { index: 0, tracks: [] } , action) {
-  const limit = 200
+// stores
+import view from './src/store/view.jsx'
 
-  switch (action.type) {
-  case 'NEXT':
-    state.index + 1
-    return state
-  case 'QUERY':
-    state.tracks = []
-    
-  case 'LOAD':
-    // .join(', ')
-    // state.tracks <<
-  default:
-    return state;
-  }
-}
+// const stateDefault = Immutable.Map({
+//   logo: 'ready',  // running | ended
+//   query: 'idle',  // running, ended
+//   tags: [],
+//   playlist: [],
+//   playlistIndex: 0
+// })
 
-let store = createStore(playlist);
+// function playlist(state = stateDefault, action) {
+//   const limit = 200
+
+//   switch (action.type) {
+//   case 'NEXT':
+//   // case 'LOAD':
+//     // .join(',')
+//   default:
+//     return state;
+//   }
+// }
+
+const voidApp = combineReducers({
+  view,
+})
+
+let store = createStore(voidApp);
 
 @Radium
 class App extends Component {
@@ -76,6 +88,7 @@ class App extends Component {
         marginTop: '5em'
       }]}>
         <Nav />
+        <Modals />
         <Header style={[header_style]} />
         <Tags style={[tag_style]} triggerSearched={this.triggerSearched.bind(this)} />
         <Player style={[player_style]}/>
@@ -84,7 +97,7 @@ class App extends Component {
   }
 }
 
-React.render(
+ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,

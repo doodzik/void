@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --compilers js:babel/register --recursive",
+    "test:watch": "npm test -- --watch",
     "start": "./bin/startup.sh"
   },
   "author": "",
@@ -29,6 +30,8 @@
   },
   "dependencies": {
     "color": "^0.10",
+    "font-awesome": "^4.4.0",
+    "immutable": "^3.7.5",
     "moment": "^2.10.6",
     "radium": "^0.14.3",
     "react": "^0.14.0",
@@ -38,6 +41,7 @@
     "react-soundcloud-widget": "doodzik/react-soundcloud-widget#347b98816834a2c7911beacb52eadce8d9de49b7",
     "react-tagsinput": "^2.0.0",
     "redux": "^3.0.4",
+    "redux-thunk": "^1.0.0",
     "soundcloud": "^3.0.1"
   }
 }
